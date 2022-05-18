@@ -5,7 +5,7 @@
 ########
 mkdir -p "$HOME/.config/nvim"
 mkdir -p "$HOME/.config/nvim/undo"
-ln -sf "$HOME/dotfiles/nvim/init.vim" "$HOME/.config/nvim"
+ln -sf "$HOME/dotfiles/nvim/init.vim" "$HOME/.config/nvim/init.vim"
 
 rm -rf "$HOME/.config/X11"
-ls -s "$HOME/dotfiles/X11" "$HOME/.config"
+ln -s "$HOME/dotfiles/X11" "$HOME/.config"
