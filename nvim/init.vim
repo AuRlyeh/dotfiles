@@ -5,6 +5,7 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'simeji/winresizer'
     Plug 'junegunn/fzf.vim'
     Plug 'simnalamburt/vim-mundo'
+    Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 augroup filetype_csv
     autocmd!
