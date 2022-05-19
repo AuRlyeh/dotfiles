@@ -1,3 +1,17 @@
+" Plugins
+call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
+    Plug 'chrisbra/csv.vim'
+    Plug 'moll/vim-bbye'
+    Plug 'simeji/winresizer'
+    Plug 'junegunn/fzf.vim'
+    Plug 'simnalamburt/vim-mundo'
+call plug#end()
+augroup filetype_csv
+    autocmd!
+
+    autocmd BufRead,BufWritePost *.csv :%ArrangeColumn!
+    autocmd BufWritePre *.csv :%UnArrangeColumn
+augroup END
 " share clipboard with X
 set clipboard+=unnamedplus
 " no swap file
@@ -16,3 +30,12 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+" Hide buffer
+set hidden
+" Keymap
+nnoremap <space> <nop>
+let mapleader = "\<space>"
+
+nnoremap <leader>bn :bn<cr>;buffer next
+nnoremap <leader>tn gt;new tab
+nnoremap <leader>x :Bdelete<cr>;new tab
