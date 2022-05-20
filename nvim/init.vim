@@ -6,6 +6,12 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'junegunn/fzf.vim'
     Plug 'simnalamburt/vim-mundo'
     Plug 'christoomey/vim-tmux-navigator'
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'machakann/vim-sandwich'
+    Plug 'yangmillstheory/vim-snipe'
+    Plug 'itchyny/lightline.vim'
+    Plug 'jez/vim-superman'
+    Plug 'tpope/vim-fugitive'
 call plug#end()
 augroup filetype_csv
     autocmd!
@@ -13,6 +19,7 @@ augroup filetype_csv
     autocmd BufRead,BufWritePost *.csv :%ArrangeColumn!
     autocmd BufWritePre *.csv :%UnArrangeColumn
 augroup END
+lua require('lspconfig').pyright.setup{}
 " share clipboard with X
 set clipboard+=unnamedplus
 " no swap file
